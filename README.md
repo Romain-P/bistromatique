@@ -1,2 +1,0 @@
-# bistromatique
-epitech bistromatique project
