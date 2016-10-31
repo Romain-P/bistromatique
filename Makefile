@@ -5,7 +5,7 @@
 ## Login   <romain.pillot@epitech.net>
 ## 
 ## Started on  Sat Oct 15 15:17:21 2016 romain pillot
-## Last update Mon Oct 31 17:30:17 2016 romain pillot
+## Last update Wed Nov  2 15:16:02 2016 Raphaël Goulmot
 #
 
 RM	=	rm
@@ -17,7 +17,8 @@ SRC     =	src/core/main.c		\
 		src/struct/number.c	\
 		src/utils/my_putstr.c	\
 		src/utils/my_strlen.c	\
-		src/utils/my_putchar.c
+		src/utils/my_putchar.c	\
+		src/calculs/division.c
 
 OBJS	=	$(SRC:.c=.o)
 
