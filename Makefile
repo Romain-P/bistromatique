@@ -5,14 +5,16 @@
 ## Login   <romain.pillot@epitech.net>
 ## 
 ## Started on  Sat Oct 15 15:17:21 2016 romain pillot
-## Last update Fri Oct 28 05:13:37 2016 romain pillot
+## Last update Mon Oct 31 17:30:17 2016 romain pillot
 #
 
 RM	=	rm
 
 NAME	=	calc
 
-SRC     =	src/core/main.c	\
+SRC     =	src/core/main.c		\
+		src/parser/checker.c	\
+		src/struct/number.c	\
 		src/utils/my_putstr.c	\
 		src/utils/my_strlen.c	\
 		src/utils/my_putchar.c
