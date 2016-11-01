@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 15:38:51 2016 romain pillot
-** Last update Mon Oct 31 16:32:59 2016 romain pillot
+** Last update Tue Nov  1 14:33:47 2016 romain pillot
 */
 
 #include "number.h"
@@ -17,7 +17,7 @@ char    is_greater(t_number *a, t_number *b)
   index = 0;
   if (a->size > b->size || a->size < b->size)
     return (a->size > b->size);
-  while (index++ < a.size)
+  while (index++ < a->size)
     {
       if (a->get[index - 1] > b->get[index - 1])
 	return (1);
