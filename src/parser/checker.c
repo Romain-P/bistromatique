@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 14:17:46 2016 romain pillot
-** Last update Tue Nov  1 18:42:42 2016 romain pillot
+** Last update Tue Nov  1 23:06:19 2016 romain pillot
 */
 
 #include "utils.h"
@@ -26,7 +26,7 @@ t_number	*calculate(t_number *a, t_number *b, char operator)
   t_number	*result;
   int		index;
   
-  if (is_greater(a, b))
+  if (is_greater(b, a))
     {
       result = a;
       a = b;
