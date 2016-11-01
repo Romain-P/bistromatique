@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 09:01:53 2016 romain pillot
-** Last update Tue Nov  1 09:06:23 2016 romain pillot
+** Last update Tue Nov  1 16:50:46 2016 romain pillot
 */
 
 #ifndef CONSTANTS_

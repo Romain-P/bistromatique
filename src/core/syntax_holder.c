@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 09:27:59 2016 romain pillot
-** Last update Tue Nov  1 13:43:49 2016 romain pillot
+** Last update Tue Nov  1 17:42:04 2016 romain pillot
 */
 
 #include "constants.h"
@@ -15,7 +15,7 @@ static char	*private_syntax(char *str)
 {
   static char	stx[7];
 
-  if (str && *str)
+  if (str && *str) 
     {
       stx[BRACKET_OPEN] = str[0];
       stx[BRACKET_CLOSE] = str[1];
@@ -26,6 +26,17 @@ static char	*private_syntax(char *str)
       stx[OPS_MOD] = str[6];
     }
   return (stx);
+}
+
+char	get_stx_index(char op)
+{
+  int	index;
+  char	*array;
+
+  array = private_syntax(0);
+  index = 0;
+  while (op != array[index++]);
+  return (index - 1);
 }
 
 char	*get_syntax()
