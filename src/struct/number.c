@@ -5,13 +5,13 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 12:45:53 2016 romain pillot
-** Last update Mon Oct 31 17:22:41 2016 romain pillot
+** Last update Tue Nov  1 14:14:14 2016 romain pillot
 */
 
 #include <stdlib.h>
 #include "utils.h"
 
-t_number	create_number(char **a, char *sign)
+t_number	*create_number(char **a, char *sign)
 {
   t_number	*number;
 
@@ -22,8 +22,17 @@ t_number	create_number(char **a, char *sign)
   return (number);
 }
 
-void		free_number(t_number *number)
+char	*free_number(t_number *number, char free_get)
 {
-  free(number->get);
+  char	*cache;
+
+  if (free_get)
+    {
+      free(number->get);
+      cache = 0;
+    }
+  else
+    cache = number->get;
   free(number);
+  return (cache);
 }
