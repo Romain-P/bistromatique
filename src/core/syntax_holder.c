@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 09:27:59 2016 romain pillot
-** Last update Tue Nov  1 17:42:04 2016 romain pillot
+** Last update Wed Nov  2 00:17:40 2016 romain pillot
 */
 
 #include "constants.h"
@@ -31,11 +31,9 @@ static char	*private_syntax(char *str)
 char	get_stx_index(char op)
 {
   int	index;
-  char	*array;
-
-  array = private_syntax(0);
+  
   index = 0;
-  while (op != array[index++]);
+  while (op != private_syntax(0)[index++]);
   return (index - 1);
 }
 
