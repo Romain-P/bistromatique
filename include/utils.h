@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:28:02 2016 romain pillot
-** Last update Mon Oct 31 16:07:22 2016 romain pillot
+** Last update Tue Nov  1 14:08:45 2016 romain pillot
 */
 
 #ifndef UTILS_
@@ -16,6 +16,6 @@
 void	my_putchar(char c);
 void	my_putstr(char *str);
 int	my_strlen(char *str);
-char	is_greater(t_number a, t_number b);
+char	is_greater(t_number *a, t_number *b);
 
 #endif /** !UTILS_ **/
