@@ -5,44 +5,30 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 10:29:25 2016 romain pillot
-** Last update Wed Nov  2 01:50:01 2016 romain pillot
+** Last update Wed Nov  2 21:03:54 2016 romain pillot
 */
 
 #include "utils.h"
-#include "base_holder.h"
+#include "base_handler.h"
 #include <stdlib.h>
 
-static t_base	*private_base(t_base **base)
+int	get_decimal(t_base *base, char c)
 {
-  static t_base	*singleton;
+  int	index;
+  char	*charset;
 
-  if (base && *base)
-    singleton = *base;
-  return (singleton);
-}
-
-int		get_decimal(char c)
-{
-  int		index;
-  char		*charset;
-
-  charset = private_base(0)->charset;
+  charset = base->charset;
   index = 0;
   while (c != charset[index++]);
-  return (index - 1);
+  return (c == charset[--index] ? index : -1);
 }
 
-char	get_char(int decimal)
+char	get_char(t_base *base, int decimal)
 {
-  return (private_base(0)->charset[decimal - 1]);
+  return (base->charset[decimal - 1]);
 }
 
-t_base	*get_base()
-{
-  return (private_base(0));
-}
-
-char		build_base(char **charset)
+t_base		*build_base(char **charset)
 {
   int		index;
   char		tmp;
@@ -59,6 +45,5 @@ char		build_base(char **charset)
   base = malloc(sizeof(t_base));
   base->get = index;
   base->charset = *charset;
-  private_base(&base);
-  return (1);
+  return (base);
 }

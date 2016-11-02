@@ -5,12 +5,12 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 12:32:52 2016 romain pillot
-** Last update Tue Nov  1 13:00:39 2016 romain pillot
+** Last update Wed Nov  2 17:47:52 2016 romain pillot
 */
 
-#ifndef MAIN_
-# define MAIN_
+#ifndef MAIN_H_
+# define MAIN_H_
 
 static char	valid_attributes();
 
-#endif /** !MAIN_ **/
+#endif /** !MAIN_H_ **/

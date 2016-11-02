@@ -5,11 +5,11 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:28:02 2016 romain pillot
-** Last update Tue Nov  1 14:08:45 2016 romain pillot
+** Last update Wed Nov  2 17:48:14 2016 romain pillot
 */
 
-#ifndef UTILS_
-# define UTILS_
+#ifndef UTILS_H_
+# define UTILS_H_
 
 # include "number.h"
 
@@ -18,4 +18,4 @@ void	my_putstr(char *str);
 int	my_strlen(char *str);
 char	is_greater(t_number *a, t_number *b);
 
-#endif /** !UTILS_ **/
+#endif /** !UTILS_H_ **/

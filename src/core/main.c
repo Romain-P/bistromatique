@@ -5,23 +5,26 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:02:31 2016 romain pillot
-** Last update Tue Nov  1 19:02:49 2016 romain pillot
+** Last update Wed Nov  2 19:42:47 2016 romain pillot
 */
 
 #include "main.h"
 #include "utils.h"
-#include "syntax_holder.h"
-#include "base_holder.h"
+#include "syntax_handler.h"
+#include "base_handler.h"
 
-int	main(int ac, char **args)
+int		main(int ac, char **args)
 {
+  t_base	*base;
+  char		*syntax;
+  
   if (ac != 4)
     return (1);
-  if (!build_syntax(args[2]))
+  if (!build_syntax((syntax = args[2])))
     return (1);
-  if (!build_base(&(args[1])))
+  if (!(base = build_base(&(args[1]))))
     return (1);
-  if (!valid_attributes(get_syntax(), get_base()))
+  if (!valid_attributes(syntax, base->charset))
     return (1);
   return (0);
 }

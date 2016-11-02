@@ -5,35 +5,23 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 14:17:46 2016 romain pillot
-** Last update Tue Nov  1 23:06:19 2016 romain pillot
+** Last update Wed Nov  2 21:19:56 2016 romain pillot
 */
 
 #include "utils.h"
 #include "calculs.h"
-#include "syntax_holder.h"
+#include "syntax_handler.h"
+#include "data.h"
 
-static void (*const operate[5])(t_number *, t_number *, t_number *) = {
-  &addition, &addition, &multiplication, &division, &modulo
-};
-
-static t_number *(*const allocate[5])(t_number *, t_number *) = {
-  &create_addition_result, &create_multiplication_result,
-  &create_division_result, &create_modulo_result
-};
-
-t_number	*calculate(t_number *a, t_number *b, char operator)
+t_number	*calculate(t_operands *ops, t_calcul *calculs, t_data *data)
 {
   t_number	*result;
   int		index;
-  
-  if (is_greater(b, a))
-    {
-      result = a;
-      a = b;
-      b = result;
-    }
-  index = get_stx_index(operator);
-  result = (*allocate[index])(a, b);
-  (*operate[index])(a, b, result);
+
+  index = get_stx_index(data->syntax, ops->operator);
+  result = calculs[index].check_and_allocate(&(ops->a), &(ops->b));
+  calculs[index].operate(ops->a, ops->b, result, data->base);
+  free_number(ops->a, 1);
+  free_number(ops->b, 1);
   return (result);
 }
