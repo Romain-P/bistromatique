@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 09:47:45 2016 romain pillot
-** Last update Tue Nov  1 15:44:11 2016 romain pillot
+** Last update Wed Nov  2 00:43:27 2016 romain pillot
 */
 
 #ifndef SYNTAX_HOLDER_
@@ -13,6 +13,6 @@
 
 char	*get_syntax();
 char	get_stx_index(char operator);
-char	build_syntax(char *str);
+char	build_syntax(char *charset);
 
 #endif /** SYNTAX_HOLDER_ **/

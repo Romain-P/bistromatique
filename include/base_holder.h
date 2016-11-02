@@ -5,13 +5,20 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 11:00:06 2016 romain pillot
-** Last update Tue Nov  1 13:10:52 2016 romain pillot
+** Last update Wed Nov  2 01:35:30 2016 romain pillot
 */
 
 #ifndef BASE_HOLDER_
 # define BASE_HOLDER_
 
-char	*get_base();
-char	build_base(char **str);
+typedef struct	s_base
+{
+  int		get;
+  char		*charset;
+}		t_base;
 
-#endif /** BASE_HOLDER_ **/
+t_base	*get_base();
+int     get_decimal(char c);
+char	build_base(char **charset);
+
+#endif /** !BASE_HOLDER_ **/

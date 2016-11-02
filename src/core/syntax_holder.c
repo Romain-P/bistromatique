@@ -5,25 +5,25 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 09:27:59 2016 romain pillot
-** Last update Wed Nov  2 00:17:40 2016 romain pillot
+** Last update Wed Nov  2 01:40:58 2016 romain pillot
 */
 
 #include "constants.h"
 #include "utils.h"
 
-static char	*private_syntax(char *str)
+static char	*private_syntax(char *charset)
 {
   static char	stx[7];
 
-  if (str && *str) 
+  if (charset && *charset)
     {
-      stx[BRACKET_OPEN] = str[0];
-      stx[BRACKET_CLOSE] = str[1];
-      stx[OPS_ADD] = str[2];
-      stx[OPS_SUB] = str[3];
-      stx[OPS_MUL] = str[4];
-      stx[OPS_DIV] = str[5];
-      stx[OPS_MOD] = str[6];
+      stx[BRACKET_OPEN] = charset[0];
+      stx[BRACKET_CLOSE] = charset[1];
+      stx[OPS_ADD] = charset[2];
+      stx[OPS_SUB] = charset[3];
+      stx[OPS_MUL] = charset[4];
+      stx[OPS_DIV] = charset[5];
+      stx[OPS_MOD] = charset[6];
     }
   return (stx);
 }
@@ -31,9 +31,11 @@ static char	*private_syntax(char *str)
 char	get_stx_index(char op)
 {
   int	index;
-  
+  char	*charset;
+
+  charset = private_syntax(0);
   index = 0;
-  while (op != private_syntax(0)[index++]);
+  while (op != charset[index++]);
   return (index - 1);
 }
 
@@ -42,21 +44,21 @@ char	*get_syntax()
   return (private_syntax(0));
 }
 
-char	build_syntax(char *str)
+char	build_syntax(char *charset)
 {
   int	index;
   char	tmp;
 
   index = 0;
   tmp = 0;
-  while (str[index++])
+  while (charset[index++])
     {
-      if (tmp && (tmp == str[index - 1]))
+      if (tmp && (tmp == charset[index - 1]))
 	return (0);
-      tmp = str[index - 1];
+      tmp = charset[index - 1];
     }
   if (index != 7)
     return (0);
-  private_syntax(str);
+  private_syntax(charset);
   return (1);
 }
