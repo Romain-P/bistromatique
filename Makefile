@@ -5,7 +5,7 @@
 ## Login   <romain.pillot@epitech.net>
 ## 
 ## Started on  Sat Oct 15 15:17:21 2016 romain pillot
-## Last update Tue Nov  1 14:33:17 2016 romain pillot
+## Last update Wed Nov  2 02:16:14 2016 romain pillot
 #
 
 RM	=	rm
@@ -15,7 +15,7 @@ NAME	=	calc
 SRC     =	src/core/main.c			\
 		src/core/syntax_holder.c	\
 		src/core/base_holder.c		\
-		src/parser/checker.c		\
+		src/parser/calculator.c		\
 		src/struct/number.c		\
 		src/util/my_putstr.c		\
 		src/util/my_strlen.c		\
