@@ -5,12 +5,15 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 12:32:52 2016 romain pillot
-** Last update Wed Nov  2 17:47:52 2016 romain pillot
+** Last update Thu Nov  3 14:24:00 2016 romain pillot
 */
 
 #ifndef MAIN_H_
 # define MAIN_H_
 
-static char	valid_attributes();
+# include "data.h"
+
+static char	valid_data(char *a, char *b);
+static void	free_all(t_data *data);
 
 #endif /** !MAIN_H_ **/

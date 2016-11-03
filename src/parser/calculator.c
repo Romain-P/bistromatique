@@ -5,13 +5,14 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 14:17:46 2016 romain pillot
-** Last update Wed Nov  2 21:19:56 2016 romain pillot
+** Last update Thu Nov  3 14:17:45 2016 romain pillot
 */
 
 #include "utils.h"
 #include "calculs.h"
 #include "syntax_handler.h"
 #include "data.h"
+#include "number.h"
 
 t_number	*calculate(t_operands *ops, t_calcul *calculs, t_data *data)
 {
@@ -20,6 +21,7 @@ t_number	*calculate(t_operands *ops, t_calcul *calculs, t_data *data)
 
   index = get_stx_index(data->syntax, ops->operator);
   result = calculs[index].check_and_allocate(&(ops->a), &(ops->b));
+  fill_result(result, data->base->charset[0]);
   calculs[index].operate(ops->a, ops->b, result, data->base);
   free_number(ops->a, 1);
   free_number(ops->b, 1);

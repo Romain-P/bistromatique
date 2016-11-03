@@ -5,13 +5,15 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 16:38:27 2016 romain pillot
-** Last update Wed Nov  2 21:24:47 2016 romain pillot
+** Last update Thu Nov  3 14:19:53 2016 romain pillot
 */
 
 #ifndef CALCULS_H_
 # define CALCULS_H_
 
 # include "data.h"
+# include "number.h"
+# include "base_handler.h"
 
 typedef struct	s_operands
 {
