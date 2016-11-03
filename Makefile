@@ -5,7 +5,7 @@
 ## Login   <romain.pillot@epitech.net>
 ## 
 ## Started on  Sat Oct 15 15:17:21 2016 romain pillot
-## Last update Wed Nov  2 15:25:44 2016 Raphaël Goulmot
+## Last update Thu Nov  3 01:51:58 2016 Raphaël Goulmot
 #
 
 RM	=	rm
@@ -13,14 +13,15 @@ RM	=	rm
 NAME	=	calc
 
 SRC     =	src/core/main.c			\
-		src/core/syntax_holder.c	\
-		src/core/base_holder.c		\
+		src/core/syntax_handler.c	\
+		src/core/base_handler.c		\
 		src/parser/calculator.c		\
 		src/struct/number.c		\
 		src/util/my_putstr.c		\
 		src/util/my_strlen.c		\
 		src/util/my_putchar.c		\
-		src/util/my_isgreater.c
+		src/util/my_isgreater.c		\
+		src/util/my_swap.c
 
 OBJS	=	$(SRC:.c=.o)
 

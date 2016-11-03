@@ -5,20 +5,37 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 16:38:27 2016 romain pillot
-** Last update Tue Nov  1 18:05:43 2016 romain pillot
+** Last update Wed Nov  2 21:24:47 2016 romain pillot
 */
 
-#ifndef CALCULS_
-# define CALCULS_
+#ifndef CALCULS_H_
+# define CALCULS_H_
 
-void		addition(t_number *a, t_number *b, t_number *result);
-void		division(t_number *a, t_number *b, t_number *result);
-void		multiplication(t_number *a, t_number *b, t_number *result);
-void		modulo(t_number *a, t_number *b, t_number *result);
+# include "data.h"
 
-t_number	*create_addition_result(t_number *a, t_number *b);
-t_number	*create_multiplication_result(t_number *a, t_number *b);
-t_number	*create_division_result(t_number *a, t_number *b);
-t_number	*create_modulo_result(t_number *a, t_number *b);
+typedef struct	s_operands
+{
+  t_number	*a;
+  t_number	*b;
+  char		operator;
+}		t_operands;
+
+t_operands	*create_operands(t_number *a, t_number *b);
+
+typedef struct	s_calcul
+{
+  void		(*operate)(t_number *, t_number *, t_number *, t_base *);
+  t_number	*(*check_and_allocate)(t_number **, t_number **);
+}		t_calcul;
+
+void		addition(t_number *a, t_number *b, t_number *result, t_base *base);
+void		division(t_number *a, t_number *b, t_number *result, t_base *base);
+void		multiplication(t_number *a, t_number *b, t_number *result, t_base *base);
+void		modulo(t_number *a, t_number *b, t_number *result, t_base *base);
+
+t_number	*create_addition_result(t_number **a, t_number **b);
+t_number	*create_multiplication_result(t_number **a, t_number **b);
+t_number	*create_division_result(t_number **a, t_number **b);
+t_number	*create_modulo_result(t_number **a, t_number **b);
 
 #endif /** !CALCULS_ **/
