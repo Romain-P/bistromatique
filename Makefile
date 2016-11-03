@@ -5,7 +5,7 @@
 ## Login   <romain.pillot@epitech.net>
 ## 
 ## Started on  Sat Oct 15 15:17:21 2016 romain pillot
-## Last update Wed Nov  2 21:15:29 2016 romain pillot
+## Last update Thu Nov  3 14:35:18 2016 romain pillot
 #
 
 RM	=	rm
@@ -16,6 +16,7 @@ SRC     =	src/core/main.c			\
 		src/core/syntax_handler.c	\
 		src/core/base_handler.c		\
 		src/parser/calculator.c		\
+		src/parser/parser.c		\
 		src/struct/number.c		\
 		src/util/my_putstr.c		\
 		src/util/my_strlen.c		\

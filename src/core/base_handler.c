@@ -5,12 +5,13 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 10:29:25 2016 romain pillot
-** Last update Wed Nov  2 21:03:54 2016 romain pillot
+** Last update Thu Nov  3 14:56:08 2016 romain pillot
 */
 
 #include "utils.h"
 #include "base_handler.h"
 #include <stdlib.h>
+#include <unistd.h>
 
 int	get_decimal(t_base *base, char c)
 {
@@ -20,7 +21,12 @@ int	get_decimal(t_base *base, char c)
   charset = base->charset;
   index = 0;
   while (c != charset[index++]);
-  return (c == charset[--index] ? index : -1);
+  if (c == charset[--index])
+    {
+      write(1, "Syntax error", 12);
+      exit(84);
+    }
+  return (index);
 }
 
 char	get_char(t_base *base, int decimal)
