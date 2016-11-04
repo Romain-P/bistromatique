@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 12:45:53 2016 romain pillot
-** Last update Tue Nov  1 14:14:14 2016 romain pillot
+** Last update Fri Nov  4 19:38:51 2016 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -20,6 +20,30 @@ t_number	*create_number(char **a, char *sign)
   number->size = my_strlen(*a);
   number->sign = *sign;
   return (number);
+}
+
+t_number        *create_result(int size, int sign)
+{
+  t_number      *result;
+
+  result = malloc(sizeof(t_number));
+  result->sign = sign;
+  result->size = size;
+  result->get = malloc(sizeof(char) * (size + 1));
+  return (result);
+}
+
+void    fill_result(char zero, t_number *result)
+{
+  int   index;
+
+  index = 0;
+  while (index < result->size)
+    {
+      result->get[index] = zero;
+      index = index + 1;
+    }
+  result->get[index] = '\0';
 }
 
 char	*free_number(t_number *number, char free_get)
