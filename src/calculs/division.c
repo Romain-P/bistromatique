@@ -5,13 +5,12 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 14:37:28 2016 Raphaël Goulmot
-** Last update Fri Nov  4 19:41:24 2016 Antonin Rapini
+** Last update Sat Nov  5 01:04:53 2016 romain pillot
 */
 
 #include "operations.h"
 #include "number.h"
 #include <stdlib.h>
-#include "operations_helpers.h"
 #include "utils.h"
 
 t_number	*create_division_result(t_number **a, t_number **b)

@@ -5,12 +5,11 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Fri Nov  4 19:41:14 2016 Antonin Rapini
+** Last update Sat Nov  5 01:04:42 2016 romain pillot
 */
 
 #include "number.h"
 #include <stdlib.h>
-#include "operations_helpers.h"
 #include "utils.h"
 
 t_number	*create_addition_result(t_number **a, t_number **b)
