@@ -5,13 +5,14 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 10:29:25 2016 romain pillot
-** Last update Sun Nov  6 18:26:40 2016 Antonin Rapini
+** Last update Sun Nov  6 18:30:43 2016 Antonin Rapini
 */
 
 #include "base_handler.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include "utils.h"
+#include "constants.h"
 
 int	get_decimal(t_base *base, char c)
 {
