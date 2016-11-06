@@ -5,14 +5,13 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Sat Nov  5 01:05:17 2016 romain pillot
+** Last update Sun Nov  6 11:52:44 2016 Antonin Rapini
 */
 
-#include "number.h"
 #include <stdlib.h>
 #include "utils.h"
 
-t_number	*create_multiplication_result(t_number **a, t_number **b)
+t_number	*create_multiplication_result(t_number **a, t_number **b, t_base *base)
 {
   int		sign;
 
@@ -33,10 +32,10 @@ void	multiplication(t_number *a, t_number *b, t_number *result, t_base *base)
   b_index = b->size - 1;
   while (a_index >= 0)
     {
-      holder = ((a->get[a_index] - 48) * (b->get[b_index] - 48));
+      holder = get_decimal(base, a->get[a_index]) * get_decimal(base, b->get[b_index]);
       result_index = result->size - (b->size - b_index) - (a->size - a_index);
-      holder = holder + (result->get[result_index + 1]) - '0';
-      place_value(holder, result_index + 1, result);
+      holder = holder + get_decimal(base, result->get[result_index + 1]);
+      place_value(holder, result_index + 1, result, base);
       a_index = b_index > 0 ? a_index : a_index - 1;
       b_index = b_index > 0 ? b_index - 1 : b->size - 1;
     }
