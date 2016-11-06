@@ -5,10 +5,9 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 10:29:25 2016 romain pillot
-** Last update Sun Nov  6 14:18:01 2016 Raphaël Goulmot
+** Last update Sun Nov  6 14:50:47 2016 Raphaël Goulmot
 */
 
-#include "utils.h"
 #include "base_handler.h"
 #include <stdlib.h>
 #include <unistd.h>
@@ -20,18 +19,18 @@ int	get_decimal(t_base *base, char c)
 
   charset = base->charset;
   index = 0;
-  while (c != charset[index++]);
-  if (c == charset[--index])
-    {
-      write(1, "Syntax error", 12);
-      exit(84);
-    }
-  return (index);
+  while (charset[index] && c != charset[index])
+      index++;
+  if (c == charset[index])
+    return (index);
+  write(1, "Syntax error", 12);
+  exit(84);
+  return (0);
 }
 
 char	get_char(t_base *base, int decimal)
 {
-  return (base->charset[decimal - 1]);
+  return (base->charset[decimal]);
 }
 
 t_base		*build_base(char **charset)
@@ -49,7 +48,7 @@ t_base		*build_base(char **charset)
 	  return (0);
     }
   base = malloc(sizeof(t_base));
-  base->get = index;
+  base->size = index - 1;
   base->charset = *charset;
   return (base);
 }

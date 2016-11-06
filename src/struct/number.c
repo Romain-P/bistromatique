@@ -5,11 +5,12 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 12:45:53 2016 romain pillot
-** Last update Sat Nov  5 01:55:53 2016 romain pillot
+** Last update Sun Nov  6 11:57:13 2016 Antonin Rapini
 */
 
 #include <stdlib.h>
-#include "utils.h"
+#include "my.h"
+#include "number.h"
 
 t_number	*create_number(char **a, int size, char sign)
 {
@@ -22,9 +23,9 @@ t_number	*create_number(char **a, int size, char sign)
   return (number);
 }
 
-t_number        *create_result(int size, int sign)
+t_number	*create_result(int size, int sign)
 {
-  t_number      *result;
+  t_number	*result;
 
   result = malloc(sizeof(t_number));
   result->sign = sign;
@@ -33,9 +34,9 @@ t_number        *create_result(int size, int sign)
   return (result);
 }
 
-void    fill_result(char zero, t_number *result)
+void	fill_result(char zero, t_number *result)
 {
-  int   index;
+  int	index;
 
   index = 0;
   while (index < result->size)

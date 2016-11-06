@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:02:31 2016 romain pillot
-** Last update Sun Nov  6 14:16:31 2016 Raphaël Goulmot
+** Last update Sun Nov  6 14:50:30 2016 Raphaël Goulmot
 */
 
 #include "main.h"
@@ -24,11 +24,12 @@ int		main(int ac, char **args)
     return (1);
   read_algebraic(my_getnbr(args[3]));
   data = malloc(sizeof(data));
-  if (!build_syntax(args[2], &(data->syntax = syntax)))
+  data->syntax = syntax;
+  if (!build_syntax(args[2], &syntax))
     return (1);
   if (!(data->base = build_base(&(args[1]))))
     return (1);
-  if (!valid_data(data->syntax->get, data->base->charset))
+  if (!valid_data(args[2], data->base->charset))
     return (1);
   free_all(data);
   return (0);

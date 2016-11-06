@@ -5,23 +5,26 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Fri Nov  4 13:36:57 2016 Antonin Rapini
+** Last update Sat Nov  5 22:15:46 2016 Antonin Rapini
 */
 
-#include "mynumber.h"
+#include "number.h"
 #include <stdlib.h>
 #include "my.h"
+#include "base_handler.h"
 
-void	place_value(int holder, int nbrf_index, t_number *nbrf)
+void	place_value(int holder, int nbrf_index, t_number *nbrf, t_base *base)
 {
   int	retenue;
 
-  retenue = holder / 10;
-  nbrf->get[nbrf_index] = (holder % 10) + '0';
-  while (nbrf_index > 0 && nbrf->get[--nbrf_index] - 48 + retenue > 9)
+  retenue = holder / base->size;
+  nbrf->get[nbrf_index] = get_char(base, holder % base->size);
+  while (nbrf_index > 0 && get_decimal(base, nbrf->get[--nbrf_index]) + retenue
+	 > base->size - 1)
     {
-      nbrf->get[nbrf_index] = ((nbrf->get[nbrf_index] - 48) + retenue - 10) + 48;
+      nbrf->get[nbrf_index] =
+	get_char(base, get_decimal(base, nbrf->get[nbrf_index]) + retenue - base->size);
       retenue = 1;
     }
-  nbrf->get[nbrf_index] = nbrf->get[nbrf_index] + retenue;
+  nbrf->get[nbrf_index] = get_char(base, get_decimal(base, nbrf->get[nbrf_index]) + retenue);
 }
