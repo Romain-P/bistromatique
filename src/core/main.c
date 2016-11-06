@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:02:31 2016 romain pillot
-** Last update Sun Nov  6 16:11:37 2016 romain pillot
+** Last update Sun Nov  6 17:51:29 2016 Antonin Rapini
 */
 
 #include "main.h"
@@ -22,26 +22,24 @@ int		main(int ac, char **args)
   t_data	*data;
   t_operator	syntax[7];
 
-  printf("hello kitty: %s\n", read_algebraic(my_getnbr(args[3])));
-  
   if (ac != 4)
     return (1);
   data = malloc(sizeof(t_data));
   data->syntax = syntax;
-  if (!build_syntax(args[2], &syntax))
+  if (!build_syntax(args[2], syntax))
     {
-      printf("pute");
-      return (1);
+      my_putstr(SYNTAX_ERROR_MSG);
+      exit(84);
     }
   if (!(data->base = build_base(&(args[1]))))
     {
-      printf("antonin");
-      return (1);
+      my_putstr(SYNTAX_ERROR_MSG);
+      exit(84);
     }
   if (!valid_data(args[2], data->base->charset))
     {
-      printf("raph");
-      return (1);
+      my_putstr(SYNTAX_ERROR_MSG);
+      exit(84);
     }
   free_all(data);
   return (0);
@@ -55,9 +53,17 @@ static void	free_all(t_data *data)
 
 static char	valid_data(char *a, char *b)
 {
-  while (*a && *b)
-    if (*(a++) == *(b++))
-      return (0);
+  int		a_index;
+  int		b_index;
+
+  a_index = 0;
+  while(a[a_index++])
+    {
+      b_index = 0;
+      while (b[b_index++])
+	if (a[a_index - 1] == b[b_index - 1])
+	  return (0);
+    }
   return (1);
 }
 

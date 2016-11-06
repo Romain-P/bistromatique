@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 10:29:25 2016 romain pillot
-** Last update Sun Nov  6 14:50:47 2016 Raphaël Goulmot
+** Last update Sun Nov  6 17:33:58 2016 Antonin Rapini
 */
 
 #include "base_handler.h"
@@ -42,9 +42,9 @@ t_base		*build_base(char **charset)
   index = 0;
   while ((*charset)[index++])
     {
-      index2 = 0;
-      while ((*charset)[index - 1 + (index2++)])
-	if ((*charset)[index + index2 - 2] == (*charset)[index - 1])
+      index2 = index;
+      while ((*charset)[index2++])
+	if ((*charset)[index - 1] == (*charset)[index2 - 1])
 	  return (0);
     }
   base = malloc(sizeof(t_base));
