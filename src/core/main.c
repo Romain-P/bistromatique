@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:02:31 2016 romain pillot
-** Last update Sat Nov  5 04:00:58 2016 romain pillot
+** Last update Sun Nov  6 14:16:31 2016 Raphaël Goulmot
 */
 
 #include "main.h"
@@ -18,10 +18,11 @@
 int		main(int ac, char **args)
 {
   t_data	*data;
-  t_operators	syntax[7];
+  t_operator	syntax[7];
 
   if (ac != 4)
     return (1);
+  read_algebraic(my_getnbr(args[3]));
   data = malloc(sizeof(data));
   if (!build_syntax(args[2], &(data->syntax = syntax)))
     return (1);
@@ -45,4 +46,15 @@ static char	valid_data(char *a, char *b)
     if (*(a++) == *(b++))
       return (0);
   return (1);
+}
+
+static char	*read_algebraic(int size)
+{
+  int	len;
+  char	*data;
+
+  data = malloc(sizeof(char) * (size + 1));
+  len = read(0, str, size);
+  str[len] = '\0';
+  return (str);
 }
