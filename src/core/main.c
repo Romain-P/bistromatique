@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:02:31 2016 romain pillot
-** Last update Thu Nov  3 14:26:41 2016 romain pillot
+** Last update Sat Nov  5 04:00:58 2016 romain pillot
 */
 
 #include "main.h"
@@ -18,15 +18,16 @@
 int		main(int ac, char **args)
 {
   t_data	*data;
+  t_operators	syntax[7];
 
   if (ac != 4)
     return (1);
   data = malloc(sizeof(data));
-  if (!build_syntax((data->syntax = args[2])))
+  if (!build_syntax(args[2], &(data->syntax = syntax)))
     return (1);
   if (!(data->base = build_base(&(args[1]))))
     return (1);
-  if (!valid_data(data->syntax, data->base->charset))
+  if (!valid_data(data->syntax->get, data->base->charset))
     return (1);
   free_all(data);
   return (0);

@@ -1,0 +1,24 @@
+/*
+** node.c for  in /home/romain.pillot/github/bistromatique/src/struct
+** 
+** Made by romain pillot
+** Login   <romain.pillot@epitech.net>
+** 
+** Started on  Sat Nov  5 01:23:34 2016 romain pillot
+** Last update Sun Nov  6 05:59:23 2016 romain pillot
+*/
+
+#include "node.h"
+
+t_node		create_node(t_node *parent)
+{
+  t_node	*node;
+
+  node = malloc(sizeof(t_node));
+  node->operator = 0;
+  node->number = 0;
+  node->left = 0;
+  node->right = 0;
+  node->parrent = parent;
+  return (node);
+}
