@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 10:29:25 2016 romain pillot
-** Last update Sun Nov  6 18:30:43 2016 Antonin Rapini
+** Last update Sun Nov  6 21:04:17 2016 Antonin Rapini
 */
 
 #include "base_handler.h"
@@ -49,6 +49,8 @@ t_base		*build_base(char **charset)
 	  return (0);
     }
   base = malloc(sizeof(t_base));
+  if (base == NULL)
+    my_putstr_err(ERROR_MSG);
   base->size = index - 1;
   base->charset = *charset;
   return (base);

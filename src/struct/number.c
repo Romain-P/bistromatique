@@ -5,17 +5,21 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 12:45:53 2016 romain pillot
-** Last update Sun Nov  6 15:51:03 2016 romain pillot
+** Last update Sun Nov  6 21:39:47 2016 Antonin Rapini
 */
 
 #include <stdlib.h>
 #include "number.h"
+#include "constants.h"
+#include "utils.h"
 
 t_number	*create_number(char **a, int size, char sign)
 {
   t_number	*number;
 
   number = malloc(sizeof(t_number));
+  if (number == NULL)
+    my_putstr_err(ERROR_MSG);
   number->get = *a;
   number->size = size;
   number->sign = sign;
@@ -27,9 +31,13 @@ t_number	*create_result(int size, int sign)
   t_number	*result;
 
   result = malloc(sizeof(t_number));
+  if (result == NULL)
+    my_putstr_err(ERROR_MSG);
   result->sign = sign;
   result->size = size;
   result->get = malloc(sizeof(char) * (size + 1));
+  if (result->get == NULL)
+    my_putstr_err(ERROR_MSG);
   return (result);
 }
 

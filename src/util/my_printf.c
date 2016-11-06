@@ -5,12 +5,12 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Thu Nov  3 01:57:07 2016 Raphaël Goulmot
-** Last update Sun Nov  6 14:08:37 2016 romain pillot
+** Last update Sun Nov  6 21:10:54 2016 Antonin Rapini
 */
 
-#include "utils.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include "utils.h"
 
 void	my_printf(char *str, ...)
 {

@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:02:31 2016 romain pillot
-** Last update Sun Nov  6 19:53:24 2016 Antonin Rapini
+** Last update Sun Nov  6 21:03:40 2016 Antonin Rapini
 */
 
 #include "main.h"
@@ -31,6 +31,8 @@ int		main(int ac, char **args)
       exit(84);
     }
   data = malloc(sizeof(t_data));
+  if (data == NULL)
+    my_putstr_err(ERROR_MSG);
   data->syntax = syntax;
   if (!build_syntax(args[2], syntax)
       || !(data->base = build_base(&(args[1])))
@@ -69,6 +71,8 @@ static char	*read_algebraic(int size)
   char		*data;
 
   data = malloc(sizeof(char) * (size + 1));
+  if (data == NULL)
+    my_putstr_err(ERROR_MSG);
   len = read(0, data, size);
   data[len] = '\0';
   return (data);

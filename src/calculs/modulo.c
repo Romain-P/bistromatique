@@ -5,11 +5,11 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 14:37:28 2016 Raphaël Goulmot
-** Last update Sun Nov  6 18:12:11 2016 Antonin Rapini
+** Last update Sun Nov  6 21:13:26 2016 Antonin Rapini
 */
 
-#include "calculs.h"
 #include <stdlib.h>
+#include "calculs.h"
 #include "utils.h"
 #include "constants.h"
 

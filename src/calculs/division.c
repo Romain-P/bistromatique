@@ -6,12 +6,12 @@
 ** 
 ** Started on  Mon Oct 31 14:37:28 2016 Raphaël Goulmot
 <<<<<<< HEAD
-** Last update Sun Nov  6 19:39:53 2016 Antonin Rapini
+** Last update Sun Nov  6 21:35:24 2016 Antonin Rapini
 =======
 */
 
-#include "calculs.h"
 #include <stdlib.h>
+#include "calculs.h"
 #include "utils.h"
 #include "constants.h"
 
@@ -44,8 +44,7 @@ void		division(t_number *a, t_number *b, t_number *c, t_base *base)
   t_number	*a_temp;
 
   count = 0;
-  b_temp = create_result(a->size, -1);
-  fill_result(base->charset[0], b_temp);
+  fill_result(base->charset[0], b_temp = create_result(a->size, -1));
   while (count++ < b->size)
     b_temp->get[count - 1] = b->get[count - 1];
   while (!is_greater(b, a, base))
@@ -60,8 +59,7 @@ void		division(t_number *a, t_number *b, t_number *c, t_base *base)
 	  count++;
 	  free(a_temp);
 	}
-      place_value(count + get_decimal(base, c->get[c->size - (b_temp->size -
-       b->size) - 1]), c->size - (b_temp->size - b->size) - 1, c, base);
+      place_value(count, c->size - (b_temp->size - b->size) - 1, c, base);
       b_temp->get[b_temp->size--] = 0;
     }
   free(b_temp);

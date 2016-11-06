@@ -5,11 +5,11 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Sun Nov  6 19:51:46 2016 Antonin Rapini
+** Last update Sun Nov  6 21:11:22 2016 Antonin Rapini
 */
 
-#include "number.h"
 #include <stdlib.h>
+#include "number.h"
 #include "utils.h"
 
 void    copy_smaller_nbr(char zero, char *a_temp, t_number *a)

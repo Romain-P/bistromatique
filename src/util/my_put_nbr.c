@@ -5,7 +5,7 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Thu Nov  3 14:21:18 2016 Raphaël Goulmot
-** Last update Sun Nov  6 12:13:30 2016 Raphaël Goulmot
+** Last update Sun Nov  6 21:09:45 2016 Antonin Rapini
 */
 
 #include "utils.h"
@@ -21,6 +21,6 @@ void	my_put_nbr(int nbr)
   while (power > 0)
     {
       my_putchar(48 + (nbr / power % 10));
-      power /= 10; 
+      power /= 10;
     }
 }

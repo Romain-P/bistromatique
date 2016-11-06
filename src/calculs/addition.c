@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Sun Nov  6 19:49:22 2016 Antonin Rapini
+** Last update Sun Nov  6 20:57:05 2016 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -37,9 +37,12 @@ void	addition(t_number *a, t_number *b, t_number *result, t_base *base)
     {
       holder = (index < a->size - b->size) ?
 	0 : get_decimal(base, b->get[index - (a->size - b->size)]) * b->sign;
-      holder = get_decimal(base, a->get[index]) + (holder * result->sign) + retenue;
+      holder = get_decimal(base, a->get[index])
+	+ (holder * result->sign) + retenue;
       retenue = (holder < 0) ? -1 : holder / base->size;
-		result->get[index + 1] = (holder < 0) ? get_char(base, base->size + holder) : get_char(base, holder % base->size);
+		result->get[index + 1] = (holder < 0) ?
+		  get_char(base, base->size + holder)
+		  : get_char(base, holder % base->size);
       index = index - 1;
     }
   result->get[0] = (retenue > 0) ? base->charset[1] : base->charset[0];

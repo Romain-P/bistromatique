@@ -5,11 +5,11 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Sun Nov  6 15:55:55 2016 romain pillot
+** Last update Sun Nov  6 21:10:09 2016 Antonin Rapini
 */
 
-#include "number.h"
 #include <stdlib.h>
+#include "number.h"
 
 int	is_zero(char zero, char *nbr)
 {
