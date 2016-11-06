@@ -5,7 +5,7 @@
 ## Login   <romain.pillot@epitech.net>
 ## 
 ## Started on  Sat Oct 15 15:17:21 2016 romain pillot
-## Last update Sun Nov  6 15:58:19 2016 romain pillot
+## Last update Sun Nov  6 18:10:30 2016 Raphaël Goulmot
 
 RM	=	rm
 
@@ -33,7 +33,8 @@ SRC     =	src/core/main.c			\
 		src/util/is_zero.c		\
 		src/util/copy_smaller_nbr.c	\
 		src/util/my_put_nbr.c		\
-		src/util/my_printf.c
+		src/util/my_printf.c		\
+		src/util/my_putstr_err.c
 
 OBJS	=	$(SRC:.c=.o)
 

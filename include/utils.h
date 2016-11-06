@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:28:02 2016 romain pillot
-** Last update Sun Nov  6 14:29:55 2016 romain pillot
+** Last update Sun Nov  6 18:10:04 2016 Raphaël Goulmot
 */
 
 #ifndef UTILS_H_
@@ -16,6 +16,7 @@
 
 void	my_putchar(char c);
 void	my_putstr(char *str);
+void	my_putstr_err(char *str);
 int	my_strlen(char *str);
 void    my_printf(char *str, ...);
 void    my_put_nbr(int nbr);
