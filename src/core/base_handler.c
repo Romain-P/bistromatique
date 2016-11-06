@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 10:29:25 2016 romain pillot
-** Last update Sat Nov  5 20:46:16 2016 Antonin Rapini
+** Last update Sun Nov  6 14:50:47 2016 Raphaël Goulmot
 */
 
 #include "base_handler.h"
@@ -36,16 +36,16 @@ char	get_char(t_base *base, int decimal)
 t_base		*build_base(char **charset)
 {
   int		index;
-  char		tmp;
+  int		index2;
   t_base	*base;
 
   index = 0;
-  tmp = 0;
   while ((*charset)[index++])
     {
-      if (tmp && tmp == (*charset)[index - 1])
-	return (0);
-      tmp = (*charset)[index - 1];
+      index2 = 0;
+      while ((*charset)[index - 1 + (index2++)])
+	if ((*charset)[index + index2 - 2] == (*charset)[index - 1])
+	  return (0);
     }
   base = malloc(sizeof(t_base));
   base->size = index - 1;

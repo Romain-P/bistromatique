@@ -5,7 +5,11 @@
 ## Login   <romain.pillot@epitech.net>
 ## 
 ## Started on  Sat Oct 15 15:17:21 2016 romain pillot
+<<<<<<< HEAD
 ## Last update Thu Nov  3 14:35:18 2016 romain pillot
+=======
+## Last update Thu Nov  3 01:51:58 2016 Raphaël Goulmot
+>>>>>>> c4f28da62bab5e22e07804b2e9c049b397fa8842
 #
 
 RM	=	rm
