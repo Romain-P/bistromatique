@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 14:17:46 2016 romain pillot
-** Last update Thu Nov  3 14:17:45 2016 romain pillot
+** Last update Sun Nov  6 06:44:48 2016 romain pillot
 */
 
 #include "utils.h"
@@ -25,5 +25,6 @@ t_number	*calculate(t_operands *ops, t_calcul *calculs, t_data *data)
   calculs[index].operate(ops->a, ops->b, result, data->base);
   free_number(ops->a, 1);
   free_number(ops->b, 1);
+  free(ops);
   return (result);
 }

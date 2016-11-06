@@ -5,11 +5,10 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Sun Nov  6 11:41:17 2016 Antonin Rapini
+** Last update Sun Nov  6 11:52:44 2016 Antonin Rapini
 */
 
 #include <stdlib.h>
-#include "operations_helpers.h"
 #include "utils.h"
 
 t_number	*create_multiplication_result(t_number **a, t_number **b, t_base *base)

@@ -5,12 +5,13 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 14:37:28 2016 Raphaël Goulmot
-** Last update Sun Nov  6 11:37:36 2016 Antonin Rapini
+<<<<<<< HEAD
+** Last update Sun Nov  6 11:56:54 2016 Antonin Rapini
+=======
 */
 
 #include "calculs.h"
 #include <stdlib.h>
-#include "operations_helpers.h"
 #include "utils.h"
 
 t_number	*create_division_result(t_number **a, t_number **b, t_base *base)
@@ -25,9 +26,11 @@ t_number	*create_division_result(t_number **a, t_number **b, t_base *base)
       exit(84);
     }
   index = 0;
-  while (index < (*b)->size && index < (*a)->size && (*a)->get[index] == (*b)->get[index])
+  while (index < (*b)->size && index
+	 < (*a)->size && (*a)->get[index] == (*b)->get[index])
     index++;
-  result_size = get_decimal(base, (*a)->get[index]) < get_decimal(base, (*b)->get[index]) && (*a)->size - (*b)->size != 0 ?
+  result_size = get_decimal(base, (*a)->get[index]) <
+    get_decimal(base, (*b)->get[index]) && (*a)->size - (*b)->size != 0 ?
     (*a)->size - (*b)->size : (*a)->size - (*b)->size + 1;
   result_size = result_size <= 0 ? 1 : result_size;
   sign = ((*a)->sign < 0 || (*b)->sign < 0) && !((*a)->sign < 0 && (*b)->sign < 0) ?
@@ -59,7 +62,8 @@ void		division(t_number *a, t_number *b, t_number *c, t_base *base)
 	  count++;
 	  free(a_temp);
 	}
-      count = count + get_decimal(base, c->get[c->size - (b_temp->size - b->size) - 1]);
+      count = count +
+	get_decimal(base, c->get[c->size - (b_temp->size - b->size) - 1]);
       place_value(count, c->size - (b_temp->size - b->size) - 1, c, base);
       b_temp->get[b_temp->size--] = 0;
     }

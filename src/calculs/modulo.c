@@ -5,12 +5,11 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 14:37:28 2016 Raphaël Goulmot
-** Last update Sun Nov  6 11:40:08 2016 Antonin Rapini
+** Last update Sun Nov  6 11:53:47 2016 Antonin Rapini
 */
 
 #include "calculs.h"
 #include <stdlib.h>
-#include "operations_helpers.h"
 #include "utils.h"
 
 t_number        *create_modulo_result(t_number **a, t_number **b, t_base *base)

@@ -5,11 +5,10 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Sun Nov  6 11:39:46 2016 Antonin Rapini
+** Last update Sun Nov  6 11:55:30 2016 Antonin Rapini
 */
 
 #include <stdlib.h>
-#include "operations_helpers.h"
 #include "utils.h"
 #include "calculs.h"
 

@@ -5,21 +5,21 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 12:45:53 2016 romain pillot
-** Last update Sat Nov  5 18:34:16 2016 Antonin Rapini
+** Last update Sun Nov  6 11:57:13 2016 Antonin Rapini
 */
 
 #include <stdlib.h>
 #include "my.h"
 #include "number.h"
 
-t_number	*create_number(char **a, char *sign)
+t_number	*create_number(char **a, int size, char sign)
 {
   t_number	*number;
 
   number = malloc(sizeof(t_number));
   number->get = *a;
-  number->size = my_strlen(*a);
-  number->sign = *sign;
+  number->size = size;
+  number->sign = sign;
   return (number);
 }
 
