@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Sun Nov  6 15:55:43 2016 romain pillot
+** Last update Sun Nov  6 19:42:59 2016 Antonin Rapini
 */
 
 #include "number.h"
@@ -22,8 +22,10 @@ void	place_value(int holder, int nbrf_index, t_number *nbrf, t_base *base)
 	 > base->size - 1)
     {
       nbrf->get[nbrf_index] =
-	get_char(base, get_decimal(base, nbrf->get[nbrf_index]) + retenue - base->size);
+	get_char(base, get_decimal(base, nbrf->get[nbrf_index])
+		 + retenue - base->size);
       retenue = 1;
     }
-  nbrf->get[nbrf_index] = get_char(base, get_decimal(base, nbrf->get[nbrf_index]) + retenue);
+  nbrf->get[nbrf_index] =
+    get_char(base, get_decimal(base, nbrf->get[nbrf_index]) + retenue);
 }

@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Sun Nov  6 15:55:34 2016 romain pillot
+** Last update Sun Nov  6 19:29:29 2016 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -35,7 +35,8 @@ void	multiplication(t_number *a, t_number *b, t_number *result, t_base *base)
   b_index = b->size - 1;
   while (a_index >= 0)
     {
-      holder = get_decimal(base, a->get[a_index]) * get_decimal(base, b->get[b_index]);
+      holder = get_decimal(base, a->get[a_index])
+	* get_decimal(base, b->get[b_index]);
       result_index = result->size - (b->size - b_index) - (a->size - a_index);
       holder = holder + get_decimal(base, result->get[result_index + 1]);
       place_value(holder, result_index + 1, result, base);

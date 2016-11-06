@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Sun Nov  6 11:55:30 2016 Antonin Rapini
+** Last update Sun Nov  6 19:49:22 2016 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -16,7 +16,7 @@ t_number	*create_addition_result(t_number **a, t_number **b, t_base *base)
 {
   t_number	*temp;
 
-  if(is_greater((*b), (*a), base))
+  if (is_greater((*b), (*a), base))
     {
       temp = (*a);
       (*a) = (*b);

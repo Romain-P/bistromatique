@@ -6,7 +6,7 @@
 ** 
 ** Started on  Mon Oct 31 14:37:28 2016 Raphaël Goulmot
 <<<<<<< HEAD
-** Last update Sun Nov  6 18:20:49 2016 Antonin Rapini
+** Last update Sun Nov  6 19:39:53 2016 Antonin Rapini
 =======
 */
 
@@ -31,7 +31,8 @@ t_number	*create_division_result(t_number **a, t_number **b, t_base *base)
     get_decimal(base, (*b)->get[index]) && (*a)->size - (*b)->size != 0 ?
     (*a)->size - (*b)->size : (*a)->size - (*b)->size + 1;
   result_size = result_size <= 0 ? 1 : result_size;
-  sign = ((*a)->sign < 0 || (*b)->sign < 0) && !((*a)->sign < 0 && (*b)->sign < 0) ?
+  sign = ((*a)->sign < 0 || (*b)->sign < 0)
+    && !((*a)->sign < 0 && (*b)->sign < 0) ?
     -1 : 1;
   return (create_result(result_size, sign));
 }
@@ -52,17 +53,15 @@ void		division(t_number *a, t_number *b, t_number *c, t_base *base)
       count = 0;
       while (!is_greater(b_temp, a, base))
 	{
-	  a_temp = create_result(a->size + 1, 1);
-	  fill_result(base->charset[0], a_temp);
+	  fill_result(base->charset[0], a_temp = create_result(a->size + 1, 1));
 	  addition(a, b_temp, a_temp, base);
 	  a->size = a_temp->size;
 	  copy_smaller_nbr(base->charset[0], a_temp->get, a);
 	  count++;
 	  free(a_temp);
 	}
-      count = count +
-	get_decimal(base, c->get[c->size - (b_temp->size - b->size) - 1]);
-      place_value(count, c->size - (b_temp->size - b->size) - 1, c, base);
+      place_value(count + get_decimal(base, c->get[c->size - (b_temp->size -
+       b->size) - 1]), c->size - (b_temp->size - b->size) - 1, c, base);
       b_temp->get[b_temp->size--] = 0;
     }
   free(b_temp);

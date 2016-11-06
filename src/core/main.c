@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:02:31 2016 romain pillot
-** Last update Sun Nov  6 18:24:45 2016 Antonin Rapini
+** Last update Sun Nov  6 19:53:24 2016 Antonin Rapini
 */
 
 #include "main.h"
@@ -53,7 +53,7 @@ static char	valid_data(char *a, char *b)
   int		b_index;
 
   a_index = 0;
-  while(a[a_index++])
+  while (a[a_index++])
     {
       b_index = 0;
       while (b[b_index++])
@@ -65,8 +65,8 @@ static char	valid_data(char *a, char *b)
 
 static char	*read_algebraic(int size)
 {
-  int	len;
-  char	*data;
+  int		len;
+  char		*data;
 
   data = malloc(sizeof(char) * (size + 1));
   len = read(0, data, size);
