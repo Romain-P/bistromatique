@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Sat Nov  5 01:06:42 2016 romain pillot
-** Last update Sun Nov  6 14:57:35 2016 romain pillot
+** Last update Sun Nov  6 19:21:24 2016 romain pillot
 */
 
 #ifndef NODE_H_
@@ -23,7 +23,8 @@ typedef struct	s_node
   struct s_node *parent;
 }		t_node;
 
-t_node	*create_node(t_node *parent);
+t_node	*create_node(t_node *parent, t_number *number);
+t_node	*create_bracket_node(t_node *parent, t_operator *op);
 void	resolve_node(t_node *current, t_calcul [], t_data *, t_operator *append);
 
 #endif /** !NODE_H_ **/

@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 12:45:53 2016 romain pillot
-** Last update Sun Nov  6 21:39:47 2016 Antonin Rapini
+** Last update Sun Nov  6 20:59:30 2016 romain pillot
 */
 
 #include <stdlib.h>
@@ -58,7 +58,7 @@ char	*free_number(t_number *number, char free_get)
 {
   char	*cache;
 
-  if (free_get)
+  if (free_get && number->malloced > 0)
     {
       free(number->get);
       cache = 0;
@@ -67,4 +67,12 @@ char	*free_number(t_number *number, char free_get)
     cache = number->get;
   free(number);
   return (cache);
+}
+
+void	init_number(t_number *number)
+{
+  number->sign = 1;
+  if (number->malloced)
+    free(number->get);
+  number->size = 0;
 }

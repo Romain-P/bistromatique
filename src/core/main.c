@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:02:31 2016 romain pillot
-** Last update Sun Nov  6 21:03:40 2016 Antonin Rapini
+** Last update Sun Nov  6 22:31:45 2016 romain pillot
 */
 
 #include "main.h"
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include "calculator.h"
 
 int		main(int ac, char **args)
 {
@@ -38,7 +39,7 @@ int		main(int ac, char **args)
       || !(data->base = build_base(&(args[1])))
       || !valid_data(args[2], data->base->charset))
     my_putstr_err(SYNTAX_ERROR_MSG);
-  my_printf("Pipe : %s", read_algebraic(my_getnbr(args[3])));
+  parse(read_algebraic(my_getnbr(args[3])), data);
   free_all(data);
   return (0);
 }

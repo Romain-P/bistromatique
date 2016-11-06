@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 11:00:06 2016 romain pillot
-** Last update Sat Nov  5 17:47:45 2016 Antonin Rapini
+** Last update Sun Nov  6 22:22:02 2016 romain pillot
 */
 
 #ifndef BASE_HANDLER_H_
@@ -18,6 +18,7 @@ typedef struct	s_base
 }		t_base;
 
 int     get_decimal(t_base *base, char c);
+int	get_safe_decimal(t_base *base, char c);
 char	get_char(t_base *base, int decimal);
 t_base	*build_base(char **charset);
 

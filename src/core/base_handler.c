@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 10:29:25 2016 romain pillot
-** Last update Sun Nov  6 21:04:17 2016 Antonin Rapini
+** Last update Sun Nov  6 22:21:36 2016 romain pillot
 */
 
 #include "base_handler.h"
@@ -27,6 +27,20 @@ int	get_decimal(t_base *base, char c)
     return (index);
   my_putstr_err(SYNTAX_ERROR_MSG);
   return (0);
+}
+
+int	get_safe_decimal(t_base *base, char c)
+{
+  int   index;
+  char  *charset;
+
+  charset = base->charset;
+  index = 0;
+  while (charset[index] && c != charset[index])
+    index++;
+  if (c == charset[index])
+    return (index);
+  return (-1);
 }
 
 char	get_char(t_base *base, int decimal)
