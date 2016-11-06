@@ -5,12 +5,11 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Sat Nov  5 22:15:46 2016 Antonin Rapini
+** Last update Sun Nov  6 15:55:43 2016 romain pillot
 */
 
 #include "number.h"
 #include <stdlib.h>
-#include "my.h"
 #include "base_handler.h"
 
 void	place_value(int holder, int nbrf_index, t_number *nbrf, t_base *base)

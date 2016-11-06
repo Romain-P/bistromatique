@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:02:31 2016 romain pillot
-** Last update Sun Nov  6 14:50:30 2016 Raphaël Goulmot
+** Last update Sun Nov  6 16:11:37 2016 romain pillot
 */
 
 #include "main.h"
@@ -13,24 +13,36 @@
 #include "syntax_handler.h"
 #include "base_handler.h"
 #include "data.h"
-#include "stdlib.h"
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
 
 int		main(int ac, char **args)
 {
   t_data	*data;
   t_operator	syntax[7];
 
+  printf("hello kitty: %s\n", read_algebraic(my_getnbr(args[3])));
+  
   if (ac != 4)
     return (1);
-  read_algebraic(my_getnbr(args[3]));
-  data = malloc(sizeof(data));
+  data = malloc(sizeof(t_data));
   data->syntax = syntax;
   if (!build_syntax(args[2], &syntax))
-    return (1);
+    {
+      printf("pute");
+      return (1);
+    }
   if (!(data->base = build_base(&(args[1]))))
-    return (1);
+    {
+      printf("antonin");
+      return (1);
+    }
   if (!valid_data(args[2], data->base->charset))
-    return (1);
+    {
+      printf("raph");
+      return (1);
+    }
   free_all(data);
   return (0);
 }
@@ -55,7 +67,7 @@ static char	*read_algebraic(int size)
   char	*data;
 
   data = malloc(sizeof(char) * (size + 1));
-  len = read(0, str, size);
-  str[len] = '\0';
-  return (str);
+  len = read(0, data, size);
+  data[len] = '\0';
+  return (data);
 }

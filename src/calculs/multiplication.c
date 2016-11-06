@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Sun Nov  6 11:52:44 2016 Antonin Rapini
+** Last update Sun Nov  6 15:55:34 2016 romain pillot
 */
 
 #include <stdlib.h>
@@ -15,6 +15,9 @@ t_number	*create_multiplication_result(t_number **a, t_number **b, t_base *base)
 {
   int		sign;
 
+  if (!base)
+    {
+    }
   sign = ((*a)->sign == -1 || (*b)->sign == -1) &&
     !((*a)->sign == -1 && (*b)->sign == -1) ? -1 : 1;
   return (create_result((*a)->size + (*b)->size + 1, sign));

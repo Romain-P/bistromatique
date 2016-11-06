@@ -5,7 +5,7 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Thu Nov  3 01:57:07 2016 Raphaël Goulmot
-** Last update Thu Nov  3 14:32:06 2016 Raphaël Goulmot
+** Last update Sun Nov  6 14:08:37 2016 romain pillot
 */
 
 #include "utils.h"
@@ -34,10 +34,4 @@ void	my_printf(char *str, ...)
       str++;
     }
   va_end(args);
-}
-
-int	main()
-{
-  my_printf("Salut, moi ces %s, j'ai %d, mes initiale sont : %c", "Raphael", 19, 'R');
-  return (0);
 }

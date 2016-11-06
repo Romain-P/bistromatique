@@ -5,7 +5,7 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 14:37:28 2016 Raphaël Goulmot
-** Last update Sun Nov  6 11:53:47 2016 Antonin Rapini
+** Last update Sun Nov  6 15:53:17 2016 romain pillot
 */
 
 #include "calculs.h"
@@ -14,8 +14,6 @@
 
 t_number        *create_modulo_result(t_number **a, t_number **b, t_base *base)
 {
-  int           index;
-
   if (is_zero(base->charset[0], (*b)->get))
     {
       my_putstr("Modulo by zero\n");

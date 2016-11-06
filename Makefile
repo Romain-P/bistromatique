@@ -5,12 +5,7 @@
 ## Login   <romain.pillot@epitech.net>
 ## 
 ## Started on  Sat Oct 15 15:17:21 2016 romain pillot
-<<<<<<< HEAD
-## Last update Thu Nov  3 14:35:18 2016 romain pillot
-=======
-## Last update Thu Nov  3 01:51:58 2016 Raphaël Goulmot
->>>>>>> c4f28da62bab5e22e07804b2e9c049b397fa8842
-#
+## Last update Sun Nov  6 15:58:19 2016 romain pillot
 
 RM	=	rm
 
@@ -21,12 +16,24 @@ SRC     =	src/core/main.c			\
 		src/core/base_handler.c		\
 		src/parser/calculator.c		\
 		src/parser/parser.c		\
+		src/calculs/addition.c		\
+		src/calculs/division.c		\
+		src/calculs/modulo.c		\
+		src/calculs/multiplication.c	\
 		src/struct/number.c		\
+		src/struct/node.c		\
+		src/struct/operands.c		\
 		src/util/my_putstr.c		\
 		src/util/my_strlen.c		\
 		src/util/my_putchar.c		\
 		src/util/my_isgreater.c		\
-		src/util/my_swap.c
+		src/util/my_swap.c		\
+		src/util/my_getnbr.c		\
+		src/util/place_value.c		\
+		src/util/is_zero.c		\
+		src/util/copy_smaller_nbr.c	\
+		src/util/my_put_nbr.c		\
+		src/util/my_printf.c
 
 OBJS	=	$(SRC:.c=.o)
 
@@ -43,6 +50,7 @@ clean:
 	$(RM) -f $(OBJS)
 	$(RM) -f $(TMP)
 	$(RM) -f Makefile~
+	clear
 
 fclean:	clean
 	$(RM) -f $(NAME)

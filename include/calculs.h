@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 16:38:27 2016 romain pillot
-** Last update Sun Nov  6 11:33:37 2016 Antonin Rapini
+** Last update Sun Nov  6 16:06:42 2016 romain pillot
 */
 
 #ifndef CALCULS_H_
@@ -22,7 +22,7 @@ typedef struct	s_operands
   char		operator;
 }		t_operands;
 
-t_operands	*create_operands(t_number *a, t_number *b);
+t_operands	*create_operands(t_number **a, t_number **b);
 
 typedef struct	s_calcul
 {

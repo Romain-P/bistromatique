@@ -5,11 +5,10 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 12:45:53 2016 romain pillot
-** Last update Sun Nov  6 11:57:13 2016 Antonin Rapini
+** Last update Sun Nov  6 15:51:03 2016 romain pillot
 */
 
 #include <stdlib.h>
-#include "my.h"
 #include "number.h"
 
 t_number	*create_number(char **a, int size, char sign)

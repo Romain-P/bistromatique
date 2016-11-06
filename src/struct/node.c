@@ -5,13 +5,15 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Sat Nov  5 01:23:34 2016 romain pillot
-** Last update Sun Nov  6 09:48:34 2016 romain pillot
+** Last update Sun Nov  6 16:01:38 2016 romain pillot
 */
 
 #include "node.h"
 #include "utils.h"
+#include <stdlib.h>
+#include "calculator.h"
 
-t_node		create_node(t_node *parent)
+t_node		*create_node(t_node *parent)
 {
   t_node	*node;
 
@@ -20,7 +22,7 @@ t_node		create_node(t_node *parent)
   node->number = 0;
   node->left = 0;
   node->right = 0;
-  node->parrent = parent;
+  node->parent = parent;
   return (node);
 }
 
@@ -38,17 +40,17 @@ static void	check_syntax(t_node *current)
 }
 
 void            resolve_node(t_node *current,
-			     t_calculs *calculs,
+			     t_calcul calculs[],
 			     t_data *data,
 			     t_operator *append)
 {
-  t_operand     *ops;
+  t_operands     *ops;
   t_number      *result;
 
   if (current->number)
     return;
   check_syntax(current);
-  ops = malloc(sizeof(t_operand));
+  ops = malloc(sizeof(t_operands));
   ops->a = current->left->number;
   ops->operator = current->operator->get;
   ops->b = current->right->number;
