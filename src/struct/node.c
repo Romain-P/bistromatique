@@ -5,10 +5,11 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Sat Nov  5 01:23:34 2016 romain pillot
-** Last update Sun Nov  6 09:16:47 2016 romain pillot
+** Last update Sun Nov  6 09:48:34 2016 romain pillot
 */
 
 #include "node.h"
+#include "utils.h"
 
 t_node		create_node(t_node *parent)
 {
@@ -25,7 +26,15 @@ t_node		create_node(t_node *parent)
 
 static void	check_syntax(t_node *current)
 {
-  
+  if (!(current->left) ||
+      !(current->left->number) ||
+      !(current->right) ||
+      !(current->right->number) ||
+      !(current->operator))
+    {
+      my_putstr("Syntax error\n");
+      exit(84);
+    }
 }
 
 void            resolve_node(t_node *current,
