@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 09:27:59 2016 romain pillot
-** Last update Sun Nov  6 07:56:30 2016 romain pillot
+** Last update Sun Nov  6 10:59:12 2016 Raphaël Goulmot
 */
 
 #include "constants.h"
@@ -24,17 +24,21 @@ char	get_stx_index(char *charset, char op)
 char		build_syntax(char *charset, t_operator **syntax)
 {
   int		index;
-  char		tmp;
+  int		old;
 
   index = 0;
-  tmp = 0;
-  while (charset[index++])
+  old = 0;
+  while (charset[old] && index++)
     {
-      if (index > 7 || (tmp && (tmp == charset[index - 1])))
+      if (!charset[index - 1])
+	{
+	  index = 1;
+	  old++;
+	}
+      if (old > 6 || charset[old])
 	return (0);
-      tmp = charset[index - 1];
-      (*syntax)[index - 1].get = tmp;
+      (*syntax)[index - 1].get = charset[old];
       (*syntax)[index - 1].lvl = index < 3 ? 0 : index < 5 ? 1 : 2;
     }
-  return (index == 7);
+  return (old == 6);
 }
