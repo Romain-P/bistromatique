@@ -5,11 +5,11 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 09:01:53 2016 romain pillot
-** Last update Sun Nov  6 11:36:35 2016 Raphaël Goulmot
+** Last update Sun Nov  6 21:45:30 2016 Antonin Rapini
 */
 
-#ifndef CONSTANTS_
-# define CONSTANTS_
+#ifndef CONSTANTS_H_
+# define CONSTANTS_H_
 
 /** Brackets **/
 # define BRACKET_OPEN		0
@@ -24,4 +24,4 @@
 # define SYNTAX_ERROR_MSG	"syntax error"
 # define ERROR_MSG		"error"
 
-#endif /** !CONSTANTS **/
+#endif /** !CONSTANTS_H_ **/

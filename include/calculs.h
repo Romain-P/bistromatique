@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 16:38:27 2016 romain pillot
-** Last update Sun Nov  6 16:06:42 2016 romain pillot
+** Last update Sun Nov  6 21:46:13 2016 Antonin Rapini
 */
 
 #ifndef CALCULS_H_
@@ -40,4 +40,4 @@ t_number	*create_multiplication_result(t_number **a, t_number **b, t_base *base)
 t_number	*create_division_result(t_number **a, t_number **b, t_base *base);
 t_number	*create_modulo_result(t_number **a, t_number **b, t_base *base);
 
-#endif /** !CALCULS_ **/
+#endif /** !CALCULS_H_ **/
