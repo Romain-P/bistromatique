@@ -5,30 +5,29 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 14:37:28 2016 Raphaël Goulmot
-** Last update Fri Nov  4 19:41:24 2016 Antonin Rapini
+** Last update Sun Nov  6 11:37:36 2016 Antonin Rapini
 */
 
-#include "operations.h"
-#include "number.h"
+#include "calculs.h"
 #include <stdlib.h>
 #include "operations_helpers.h"
 #include "utils.h"
 
-t_number	*create_division_result(t_number **a, t_number **b)
+t_number	*create_division_result(t_number **a, t_number **b, t_base *base)
 {
   int		index;
   int		result_size;
   int		sign;
 
-  if (is_zero((*b)->get))
+  if (is_zero(base->charset[0], (*b)->get))
     {
       my_putstr("Division by zero\n");
       exit(84);
     }
   index = 0;
-  while ((*b)->get[index] && (*a)->get[index] && (*a)->get[index] == (*b)->get[index])
+  while (index < (*b)->size && index < (*a)->size && (*a)->get[index] == (*b)->get[index])
     index++;
-  result_size = (*a)->get[index] < (*b)->get[index] && (*a)->size - (*b)->size != 0 ?
+  result_size = get_decimal(base, (*a)->get[index]) < get_decimal(base, (*b)->get[index]) && (*a)->size - (*b)->size != 0 ?
     (*a)->size - (*b)->size : (*a)->size - (*b)->size + 1;
   result_size = result_size <= 0 ? 1 : result_size;
   sign = ((*a)->sign < 0 || (*b)->sign < 0) && !((*a)->sign < 0 && (*b)->sign < 0) ?
@@ -44,24 +43,24 @@ void		division(t_number *a, t_number *b, t_number *c, t_base *base)
 
   count = 0;
   b_temp = create_result(a->size, -1);
-  fill_result('0', b_temp);
+  fill_result(base->charset[0], b_temp);
   while (count++ < b->size)
     b_temp->get[count - 1] = b->get[count - 1];
-  while (!is_greater(b, a))
+  while (!is_greater(b, a, base))
     {
       count = 0;
-      while (!is_greater(b_temp, a))
+      while (!is_greater(b_temp, a, base))
 	{
 	  a_temp = create_result(a->size + 1, 1);
-	  fill_result('0', a_temp);
-	  addition(a, b_temp, a_temp);
+	  fill_result(base->charset[0], a_temp);
+	  addition(a, b_temp, a_temp, base);
 	  a->size = a_temp->size;
-	  copy_smaller_nbr(a_temp->get, a);
+	  copy_smaller_nbr(base->charset[0], a_temp->get, a);
 	  count++;
 	  free(a_temp);
 	}
-      count = count + c->get[c->size - (b_temp->size - b->size) - 1] - '0';
-      place_value(count, c->size - (b_temp->size - b->size) - 1, c);
+      count = count + get_decimal(base, c->get[c->size - (b_temp->size - b->size) - 1]);
+      place_value(count, c->size - (b_temp->size - b->size) - 1, c, base);
       b_temp->get[b_temp->size--] = 0;
     }
   free(b_temp);

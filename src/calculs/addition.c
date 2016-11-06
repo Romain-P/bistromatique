@@ -5,19 +5,19 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 25 16:00:17 2016 Antonin Rapini
-** Last update Fri Nov  4 19:41:14 2016 Antonin Rapini
+** Last update Sun Nov  6 11:39:46 2016 Antonin Rapini
 */
 
-#include "number.h"
 #include <stdlib.h>
 #include "operations_helpers.h"
 #include "utils.h"
+#include "calculs.h"
 
-t_number	*create_addition_result(t_number **a, t_number **b)
+t_number	*create_addition_result(t_number **a, t_number **b, t_base *base)
 {
   t_number	*temp;
 
-  if(!is_greater((*a), (*b)))
+  if(is_greater((*b), (*a), base))
     {
       temp = (*a);
       (*a) = (*b);
@@ -37,11 +37,11 @@ void	addition(t_number *a, t_number *b, t_number *result, t_base *base)
   while (index >= 0)
     {
       holder = (index < a->size - b->size) ?
-	0 : (b->get[index - (a->size - b->size)] - 48) * b->sign;
-      holder = (a->get[index] - 48) + (holder * result->sign) + retenue;
-      retenue = (holder < 0) ? -1 : holder / 10;
-      result->get[index + 1] = (holder < 0) ? (10 + holder) + '0' : (holder % 10) + '0';
+	0 : get_decimal(base, b->get[index - (a->size - b->size)]) * b->sign;
+      holder = get_decimal(base, a->get[index]) + (holder * result->sign) + retenue;
+      retenue = (holder < 0) ? -1 : holder / base->size;
+		result->get[index + 1] = (holder < 0) ? get_char(base, base->size + holder) : get_char(base, holder % base->size);
       index = index - 1;
     }
-  result->get[0] = (retenue == 1) ? '1' : '0';
+  result->get[0] = (retenue > 0) ? base->charset[1] : base->charset[0];
 }

@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Tue Nov  1 16:38:27 2016 romain pillot
-** Last update Thu Nov  3 14:19:53 2016 romain pillot
+** Last update Sun Nov  6 11:33:37 2016 Antonin Rapini
 */
 
 #ifndef CALCULS_H_
@@ -27,7 +27,7 @@ t_operands	*create_operands(t_number *a, t_number *b);
 typedef struct	s_calcul
 {
   void		(*operate)(t_number *, t_number *, t_number *, t_base *);
-  t_number	*(*check_and_allocate)(t_number **, t_number **);
+  t_number	*(*check_and_allocate)(t_number **, t_number **, t_base *);
 }		t_calcul;
 
 void		addition(t_number *a, t_number *b, t_number *result, t_base *base);
@@ -35,9 +35,9 @@ void		division(t_number *a, t_number *b, t_number *result, t_base *base);
 void		multiplication(t_number *a, t_number *b, t_number *result, t_base *base);
 void		modulo(t_number *a, t_number *b, t_number *result, t_base *base);
 
-t_number	*create_addition_result(t_number **a, t_number **b);
-t_number	*create_multiplication_result(t_number **a, t_number **b);
-t_number	*create_division_result(t_number **a, t_number **b);
-t_number	*create_modulo_result(t_number **a, t_number **b);
+t_number	*create_addition_result(t_number **a, t_number **b, t_base *base);
+t_number	*create_multiplication_result(t_number **a, t_number **b, t_base *base);
+t_number	*create_division_result(t_number **a, t_number **b, t_base *base);
+t_number	*create_modulo_result(t_number **a, t_number **b, t_base *base);
 
 #endif /** !CALCULS_ **/
