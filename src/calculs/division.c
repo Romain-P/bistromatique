@@ -6,13 +6,14 @@
 ** 
 ** Started on  Mon Oct 31 14:37:28 2016 Raphaël Goulmot
 <<<<<<< HEAD
-** Last update Sun Nov  6 11:56:54 2016 Antonin Rapini
+** Last update Sun Nov  6 18:20:49 2016 Antonin Rapini
 =======
 */
 
 #include "calculs.h"
 #include <stdlib.h>
 #include "utils.h"
+#include "constants.h"
 
 t_number	*create_division_result(t_number **a, t_number **b, t_base *base)
 {
@@ -21,10 +22,7 @@ t_number	*create_division_result(t_number **a, t_number **b, t_base *base)
   int		sign;
 
   if (is_zero(base->charset[0], (*b)->get))
-    {
-      my_putstr("Division by zero\n");
-      exit(84);
-    }
+      my_putstr_err(ERROR_MSG);
   index = 0;
   while (index < (*b)->size && index
 	 < (*a)->size && (*a)->get[index] == (*b)->get[index])

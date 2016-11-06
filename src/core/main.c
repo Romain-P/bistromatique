@@ -5,7 +5,7 @@
 ** Login   <romain.pillot@epitech.net>
 ** 
 ** Started on  Fri Oct 28 01:02:31 2016 romain pillot
-** Last update Sun Nov  6 18:08:34 2016 Raphaël Goulmot
+** Last update Sun Nov  6 18:24:45 2016 Antonin Rapini
 */
 
 #include "main.h"
@@ -25,9 +25,10 @@ int		main(int ac, char **args)
 
   if (ac != 4)
     {
-      my_putstr_err("Usage: ");
-      my_putstr_err(args[0]);
-      my_putstr_err(" base ops \"()+-*/%\" exp_len \n");
+      my_putstr("Usage: ");
+      my_putstr(args[0]);
+      my_putstr(" base ops \"()+-*/%\" exp_len\n");
+      exit(84);
     }
   data = malloc(sizeof(t_data));
   data->syntax = syntax;

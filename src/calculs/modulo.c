@@ -5,20 +5,18 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Mon Oct 31 14:37:28 2016 Raphaël Goulmot
-** Last update Sun Nov  6 15:53:17 2016 romain pillot
+** Last update Sun Nov  6 18:12:11 2016 Antonin Rapini
 */
 
 #include "calculs.h"
 #include <stdlib.h>
 #include "utils.h"
+#include "constants.h"
 
 t_number        *create_modulo_result(t_number **a, t_number **b, t_base *base)
 {
   if (is_zero(base->charset[0], (*b)->get))
-    {
-      my_putstr("Modulo by zero\n");
-      exit(84);
-    }
+      my_putstr_err(ERROR_MSG);
   return (create_result((*a)->size, (*a)->sign));
 }
 
